@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [text]="buttonText" [icon]="buttonIcon">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Enter The Detail of Last Transaction</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <ion-item>
+          <ion-label position="floating">Amount Spend</ion-label>
+          <ion-input type="text" name="amount" [(ngModel)]="amount" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Reason</ion-label>
+          <ion-input type="text" name="reason" [(ngModel)]="reason" required></ion-input>
+        </ion-item>
+        <ion-button (click)='up(amount)'>Submit</ion-button>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>

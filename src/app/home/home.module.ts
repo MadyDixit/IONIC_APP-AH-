@@ -1,3 +1,5 @@
+import { DetailPage } from './../pages/detail/detail.page';
+import { AddAccountPage } from './../pages/add-account/add-account.page';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -15,9 +17,17 @@ import { HomePage } from './home.page';
       {
         path: '',
         component: HomePage
+      },
+      {
+        path: 'add-account',
+        component: AddAccountPage
+      },
+      {
+        path: 'acc-detail',
+        component: DetailPage,
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, AddAccountPage, DetailPage]
 })
-export class HomePageModule {}
+export class HomePageModule { }

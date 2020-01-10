@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [text]="buttonText" [icon]="buttonIcon">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Bank Name: {{item.bank}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Left Balance:{{item.balance}}
+      </ion-card-title>
+      <ion-card-subtitle>
+        Last Transactions Detail
+      </ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
+<ion-button full [routerLink]="['/trans']">Add More</ion-button>
