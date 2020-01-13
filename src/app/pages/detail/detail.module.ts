@@ -1,5 +1,5 @@
+import { UpdateComponent } from './update/update.component';
 import { HomePageModule } from './../../home/home.module';
-import { TransPage } from './../trans/trans.page';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -17,6 +17,9 @@ import { DetailPage } from './detail.page';
     IonicModule,
     DetailPageRoutingModule,
   ],
-  declarations: [DetailPage]
+  declarations: [DetailPage, UpdateComponent]
 })
-export class DetailPageModule { }
+export class DetailPageModule {
+
+
+}

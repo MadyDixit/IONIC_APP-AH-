@@ -2,6 +2,7 @@ import { DataService } from './../services/data.service';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -12,7 +13,7 @@ export class HomePage {
   name: any;
   it: any;
 
-  constructor(public afDB: AngularFireDatabase, public service: DataService) {
+  constructor(public afDB: AngularFireDatabase, public service: DataService, private router: Router) {
     this.items = afDB.list('/').valueChanges().subscribe(res => {
       console.log(res)
       this.name = res
@@ -21,5 +22,6 @@ export class HomePage {
   detail(item: any) {
     console.log(item)
     this.service.getdata(item)
+
   }
 }

@@ -13,6 +13,7 @@ export class AddAccountPage implements OnInit {
   user = ""
   bank = ""
   Balance = ""
+  reason = "Credit"
   item = {}
   i = 0
   ngOnInit() {
@@ -32,8 +33,9 @@ export class AddAccountPage implements OnInit {
       this.item = {
         'name': this.user,
         'bank': this.bank,
-        'reason': "",
-        'balance': this.Balance
+        'reason': [this.reason],
+        'balance': this.Balance,
+        'transaction': [this.Balance]
       }
       this.data.add(this.item)
     }

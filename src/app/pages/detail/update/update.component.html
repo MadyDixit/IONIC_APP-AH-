@@ -4,10 +4,9 @@
       <ion-back-button [text]="buttonText" [icon]="buttonIcon">
       </ion-back-button>
     </ion-buttons>
-    <ion-title>Enter The Detail of Last Transaction</ion-title>
+    <ion-title>Enter Last Transaction</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <ion-card>
     <ion-card-header>
@@ -20,7 +19,7 @@
           <ion-label position="floating">Reason</ion-label>
           <ion-input type="text" name="reason" [(ngModel)]="reason" required></ion-input>
         </ion-item>
-        <ion-button (click)='up(amount)'>Submit</ion-button>
+        <ion-button (click)="sub(amount, reason)">Submit</ion-button>
       </ion-card-title>
     </ion-card-header>
   </ion-card>

@@ -1,3 +1,5 @@
+import { FormsModule } from '@angular/forms';
+import { UpdateComponent } from './pages/detail/update/update.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -16,13 +18,14 @@ import { DataService } from './services/data.service'
 import { AngularFirestoreModule } from '@angular/fire/firestore'
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, UpdateComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
-    AngularFireAuthModule],
+    AngularFireAuthModule,
+    FormsModule],
   providers: [
     StatusBar,
     SplashScreen,

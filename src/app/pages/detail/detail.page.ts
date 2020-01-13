@@ -1,5 +1,8 @@
 import { DataService } from './../../services/data.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { Template } from '@angular/compiler/src/render3/r3_ast';
+import { NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,12 +13,16 @@ import { Component, OnInit } from '@angular/core';
 export class DetailPage implements OnInit {
   last: any
   item;
+  numbers
   flag: boolean = false
-  constructor(public home: DataService) {
+  constructor(public home: DataService, private router: Router) {
     this.item = home.senddata()
   }
   ngOnInit() { }
-  Add() {
-    this.flag = true
+  add() {
+    this.flag = !this.flag
+    if (this.flag) {
+      this.router.navigate(['/update'])
+    }
   }
 }

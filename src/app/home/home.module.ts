@@ -1,3 +1,4 @@
+import { UpdateComponent } from '../pages/detail/update/update.component';
 import { DetailPage } from './../pages/detail/detail.page';
 import { AddAccountPage } from './../pages/add-account/add-account.page';
 import { NgModule } from '@angular/core';
@@ -23,9 +24,9 @@ import { HomePage } from './home.page';
         component: AddAccountPage
       },
       {
-        path: 'acc-detail',
+        path: 'acc-detail/:name?',
         component: DetailPage,
-      }
+      },
     ])
   ],
   declarations: [HomePage, AddAccountPage, DetailPage]
