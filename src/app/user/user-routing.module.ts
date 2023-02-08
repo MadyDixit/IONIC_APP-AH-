@@ -6,7 +6,6 @@ import { UserPage } from './user.page';
 const routes: Routes = [
   {
     path: '',
-    component: UserPage,
     children: [
       {
         path: 'auth/login',
@@ -18,8 +17,8 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'user',
-        pathMatch: 'full'
+        component: UserPage,
+        // pathMatch: 'full'
       }
     ]
   }

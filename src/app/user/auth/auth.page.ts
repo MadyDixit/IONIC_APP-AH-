@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserPage } from '../user.page';
+
 
 @Component({
   selector: 'app-auth',
@@ -6,12 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth.page.scss'],
 })
 export class AuthPage implements OnInit {
+  
+  //Variable
+  route = false;
+  component:any;
 
-  constructor() {
-    console.log('Test');
-   }
-
+  constructor(private router: Router) {
+    console.log(router.url)
+    this.component =  UserPage
+    if(router.url == '/auth/login'){
+      this.route = true
+    }
+  }
+  
   ngOnInit() {
   }
+
 
 }

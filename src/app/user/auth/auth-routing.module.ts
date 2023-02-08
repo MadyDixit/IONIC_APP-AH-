@@ -7,11 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: AuthPage
-  },
-  // {
-  //   path: 'auth/signup',
-  //   component: AuthPage
-  // }
+  }
 ];
 
 @NgModule({

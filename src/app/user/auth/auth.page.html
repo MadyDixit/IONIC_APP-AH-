@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Auth</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-title>Back Button</ion-title> -->
+    <!-- <ion-title>Auth</ion-title> -->
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div *ngIf="route">
+    <app-login></app-login>
+  </div>
+  <div *ngIf="!route">
+    <app-signup></app-signup>
+  </div>
 </ion-content>
