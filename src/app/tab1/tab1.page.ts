@@ -9,4 +9,8 @@ export class Tab1Page {
 
   constructor() {}
 
+  openTextToImage(){
+    console.log('Test');
+  }
+
 }

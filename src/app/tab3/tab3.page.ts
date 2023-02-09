@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthServiceService } from '../user/userService/auth-service.service';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +8,15 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  constructor(private authService: AuthServiceService) {}
+
+  signOut(){
+    this.authService.SignOut().then((res)=>{
+      console.log("SignOut");
+
+    }).catch(err =>{
+      window.alert(err.message);
+    })
+  }
 
 }

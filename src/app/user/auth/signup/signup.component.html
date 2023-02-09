@@ -1,14 +1,15 @@
-<p>
-  signup works!
-</p>
-<div>
-  <p>Email Address</p>
-  <input>
-  <p>Password</p>
-  <input>
-  <p>First Name</p>
-  <input>
-  <p>Last Name</p>
-  <input>
-  <button (click)="signUp()">Submit</button>
-</div>
+<form>    
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" #email required></ion-input>
+    </ion-item> 
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" #password required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col> 
+      <ion-button type="submit" (click)="signUp(email, password)" expand="block">Register</ion-button>
+      </ion-col>
+    </ion-row>
+</form>
