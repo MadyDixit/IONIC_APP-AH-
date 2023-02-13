@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StorageServiceService } from '../Service/firebase/storage-service.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,10 +8,20 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  streamName:any;
 
+  constructor(private storageServiceService: StorageServiceService) {}
+  ngOnInit(){
+    
+    console.log('Test');
+    this.storageServiceService.fetchStreams().then((streams)=> {
+      console.log(streams);
+      this.streamName = streams
+    });
+  }
   openTextToImage(){
     console.log('Test');
+    this.storageServiceService.fetchStreams();
   }
 
 }

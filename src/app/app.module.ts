@@ -21,11 +21,13 @@ import { AuthGuard } from './user/userService/auth.guard';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    // AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseStorageConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireDatabaseModule,],
+    AngularFireDatabaseModule,
+  ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, AuthGuard],
   bootstrap: [AppComponent],
 })
