@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { TextToImageComponent } from './text-to-image.component';
+import { ExamsPage } from './exams.page';
 
-describe('TextToImageComponent', () => {
-  let component: TextToImageComponent;
-  let fixture: ComponentFixture<TextToImageComponent>;
+describe('ExamsPage', () => {
+  let component: ExamsPage;
+  let fixture: ComponentFixture<ExamsPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ TextToImageComponent ],
+      declarations: [ ExamsPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TextToImageComponent);
+    fixture = TestBed.createComponent(ExamsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

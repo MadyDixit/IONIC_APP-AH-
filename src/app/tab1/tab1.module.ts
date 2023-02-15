@@ -6,7 +6,8 @@ import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
-import { TextToImageComponentModule } from '../component/text-to-image/component.module';
+import { ExamsModule } from '../component/exams/exams.module';
+
 
 
 
@@ -17,7 +18,7 @@ import { TextToImageComponentModule } from '../component/text-to-image/component
     FormsModule,
     ExploreContainerComponentModule,
     Tab1PageRoutingModule,
-    TextToImageComponentModule
+    ExamsModule
   ],
   declarations: [Tab1Page]
 })

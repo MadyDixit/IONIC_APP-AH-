@@ -27,6 +27,10 @@ const routes: Routes = [
     ]
   },
   {
+    path: ':id',
+    loadChildren: () => import('../pages/exams/exams.module').then(m => m.ExamsPageModule)
+  },
+  {
     path: '',
     redirectTo: 'tabs/tab1',
     pathMatch: 'full'
@@ -37,4 +41,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { rejects } from 'assert';
 
 
 
@@ -23,6 +24,19 @@ export class StorageServiceService {
         })
         console.log(streams);
         resolve(streams)
+      })
+    })
+  }
+  fetchExam(stream : string){
+    return new Promise((rejects, resolve) => {
+      const data = this.angularFireDatabase.list('/Streams/' + stream).snapshotChanges()
+      var exams:any = []
+      data.subscribe((da) => {
+        da.forEach((da1) => {
+          exams.push(da1.key)
+        })
+        console.log(exams)
+        resolve(exams)
       })
     })
   }
