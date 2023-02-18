@@ -17,6 +17,10 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 // Service Imports
 import { AuthGuard } from './user/userService/auth.guard';
 
+// Module for PDF
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +31,7 @@ import { AuthGuard } from './user/userService/auth.guard';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    PdfViewerModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, AuthGuard],
   bootstrap: [AppComponent],

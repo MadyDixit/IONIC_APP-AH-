@@ -8,12 +8,16 @@ import { ExamPageRoutingModule } from './exam-routing.module';
 
 import { ExamPage } from './exam.page';
 
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ExamPageRoutingModule
+    ExamPageRoutingModule,
+    PdfViewerModule 
   ],
   declarations: [ExamPage]
 })

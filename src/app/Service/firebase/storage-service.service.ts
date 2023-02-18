@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { rejects } from 'assert';
-
+// import 'firebase/firestore';
 
 
 @Injectable({
@@ -11,7 +10,10 @@ import { rejects } from 'assert';
 export class StorageServiceService {
 
   constructor(private angularFireStorage: AngularFireStorage, private angularFireDatabase: AngularFireDatabase) { }
+  
   cacheValue: any
+
+
 
   fetchStreams() {
     return new Promise((resolve, reject) => {
@@ -53,6 +55,17 @@ export class StorageServiceService {
         })
         console.log(year);
         resolve(year)
+      })
+    })
+  }
+  fetchDoc(stream:string, exam:string, year: string){
+    console.log(year);
+    
+    new Promise((resolve, reject) => {
+      const docData = this.angularFireStorage.ref(stream + '/' + exam + '/' + year + '/User Journey - Registration, Team formation, Idea Submissiondb25e00.zip')
+      console.log(docData);
+      docData.getDownloadURL().subscribe((data) => {
+        console.log(data)
       })
     })
   }
