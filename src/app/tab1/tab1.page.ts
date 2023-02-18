@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { StorageServiceService } from '../Service/firebase/storage-service.service';
 
@@ -50,7 +50,13 @@ export class Tab1Page implements OnInit, OnChanges {
     console.log(exam);
     this.selectedStream = exam
     this.streamSelected = true
-    this.route.navigate([exam])
+    // this.storageServiceService.fetchExam(exam, false).then((data) => {
+    // }).catch((e) => {
+    //   console.log(e);
+    // })
+
+    this.route.navigate(["Exams/"+ exam])
+
   }
 
 }

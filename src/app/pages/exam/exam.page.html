@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-title>{{examName}} Exam</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-select *ngFor="let year of examYears" placeholder="Select Years" >
+        <ion-select-option value=year>{{year}}</ion-select-option>
+        </ion-select>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

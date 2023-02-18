@@ -11,6 +11,15 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
+  },
+  {
+    path: 'Exams/:id',
+    loadChildren: () => import('./pages/exams/exams.module').then(m => m.ExamsPageModule),
+    canActivate:[AuthGuard]
+  },
+  {
+    path: 'Exams/:stream/:id',
+    loadChildren: () => import('./pages/exam/exam.module').then( m => m.ExamPageModule)
   }
 ];
 @NgModule({

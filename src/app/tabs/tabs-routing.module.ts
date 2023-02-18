@@ -27,10 +27,6 @@ const routes: Routes = [
     ]
   },
   {
-    path: ':id',
-    loadChildren: () => import('../pages/exams/exams.module').then(m => m.ExamsPageModule)
-  },
-  {
     path: '',
     redirectTo: 'tabs/tab1',
     pathMatch: 'full'
