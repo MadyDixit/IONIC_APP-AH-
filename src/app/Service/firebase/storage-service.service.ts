@@ -46,12 +46,15 @@ export class StorageServiceService {
     })
   }
   fetchYear(stream: string, exam: string){
+    console.log(stream, exam);
+    
     return new Promise((resolve, reject) => {
-      const data3 = this.angularFireDatabase.list('/Streams/' + stream + '/' + exam).valueChanges();
+      const data3 = this.angularFireDatabase.list('/Streams/' + stream + '/' + exam).snapshotChanges();
+      console.log(data3);
       var year:any = []
       data3.subscribe((damm) => {        
         damm.forEach((damm1) => {
-          year.push(damm1)
+          year.push(damm1.key)
         })
         console.log(year);
         resolve(year)
@@ -61,11 +64,25 @@ export class StorageServiceService {
   fetchDoc(stream:string, exam:string, year: string){
     console.log(year);
     
-    new Promise((resolve, reject) => {
-      const docData = this.angularFireStorage.ref(stream + '/' + exam + '/' + year + '/User Journey - Registration, Team formation, Idea Submissiondb25e00.zip')
-      console.log(docData);
-      docData.getDownloadURL().subscribe((data) => {
-        console.log(data)
+    return new Promise((resolve, reject) => {
+      const data4 = this.angularFireDatabase.list('/Streams/' + stream + '/' + exam).valueChanges();
+      console.log(data4);
+      
+      var filename:any = []
+      data4.subscribe((damn) => {
+        damn.forEach((data) => {
+          console.log(data);
+          filename.push(data)
+          console.log(filename);
+          console.log(filename[filename.length - 1]);
+          console.log(stream + '/' + exam + '/' + year + '/' + filename[filename.length - 1]);
+          const docData = this.angularFireStorage.ref(stream + '/' + exam + '/' + year + '/' + filename[filename.length - 1])
+          console.log(docData);
+          docData.getDownloadURL().subscribe((data) => {
+            console.log(data)
+            resolve(data)
+          })
+        })
       })
     })
   }
